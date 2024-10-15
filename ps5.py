@@ -1,7 +1,5 @@
 # -*- coding: utf-8 -*-
 Modeling Temperature Change
-# Name: Nony Otu Ugwu
-# Collaborators: None
 
 import numpy as np
 import matplotlib.pyplot as plt
@@ -34,9 +32,6 @@ CITIES = [
 TRAIN_INTERVAL = range(1961, 2000)
 TEST_INTERVAL = range(2000, 2017)
 
-##########################
-#    Begin helper code   #
-##########################
 
 def standard_error_over_slope(x, y, estimated, model):
     """
@@ -143,9 +138,6 @@ class Dataset(object):
         assert day in self.rawdata[city][year][month], "provided day is not available"
         return self.rawdata[city][year][month][day]
 
-##########################
-#    End helper code     #
-##########################
 
     def calculate_annual_temp_averages(self, cities, years):
         """
@@ -173,10 +165,6 @@ class Dataset(object):
 
         return np.array(annual_temps)
 
-# Why do we choose to minimize the squared error?
-# Are there other options that might be better?
-#
-# Write your answer below as a comment:
 # We minimize the square error so to minimize the impact of outliers on our data.
 # In other words, it minimizes the variance our our data. Another thing that might work better is
 # we could use a robust regression technique, which might work better in a case where we
@@ -268,16 +256,6 @@ def generate_polynomial_models(x, y, degrees):
         models.append(coeffs)
 
     return models
-
-# How could you use generate_polynomial_models to
-# return the linear regression model for a set of
-# data points x,y?
-#
-# Write your answer below as a comment:
-
-# We could use it by passing [1] as the degrees argument.
-# Since [1] is what we use to fit a polynomial of degree 1,
-# the function will return the right coefficients for the linear regression model.
 
 
 def evaluate_models(x, y, models, display_graphs=False):
