@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 # Sea Level Rise
-# Name: Nony Otu Ugwu
+
 
 
 import matplotlib.pyplot as plt
@@ -9,10 +9,6 @@ import pandas as pd
 
 import scipy.stats as st
 from scipy.interpolate import interp1d
-
-#####################
-# Begin helper code #
-#####################
 
 def calculate_std(upper, mean):
     """
