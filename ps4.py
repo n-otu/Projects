@@ -1,8 +1,6 @@
 # -*- coding: utf-8 -*-
 # Sea Level Rise
 
-
-
 import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
@@ -48,10 +46,6 @@ def load_data():
     df.columns = ['Year', 'Lower', 'Upper']
     return (df.Year.to_numpy(), df.Lower.to_numpy(), df.Upper.to_numpy())
 
-
-###################
-# End helper code #
-###################
 
 
 ##########
